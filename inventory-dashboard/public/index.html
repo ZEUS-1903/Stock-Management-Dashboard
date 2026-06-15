@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stockroom — Inventory Console</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- LOGIN -->
+  <section id="login-view" class="login-wrap">
+    <div class="login-card">
+      <div class="brand"><span class="brand-mark">▦</span> Stockroom</div>
+      <p class="login-sub">Inventory &amp; stock-management console</p>
+      <div class="field">
+        <label for="username">Username</label>
+        <input id="username" type="text" autocomplete="username" value="admin" />
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input id="password" type="password" autocomplete="current-password" value="admin123" />
+      </div>
+      <button id="login-btn" class="btn btn-primary btn-block">Sign in</button>
+      <p id="login-error" class="error"></p>
+      <p class="hint">Demo logins: <code>admin / admin123</code> &nbsp;·&nbsp; <code>staff / staff123</code></p>
+    </div>
+  </section>
+
+  <!-- DASHBOARD -->
+  <section id="app-view" class="app hidden">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">▦</span> Stockroom</div>
+      <div class="topbar-right">
+        <span id="who" class="who"></span>
+        <button id="logout-btn" class="btn btn-ghost">Sign out</button>
+      </div>
+    </header>
+
+    <main class="content">
+      <div id="cards" class="cards"></div>
+
+      <div class="grid">
+        <div class="panel">
+          <div class="panel-head">
+            <h2>Products</h2>
+            <span class="muted">low-stock rows are flagged</span>
+          </div>
+          <div class="table-wrap">
+            <table id="products-table">
+              <thead>
+                <tr>
+                  <th>SKU</th><th>Name</th><th>Category</th>
+                  <th class="num">On hand</th><th class="num">Reorder</th>
+                  <th class="num">Value</th><th></th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h2>Stock by product</h2></div>
+          <div id="chart" class="chart"></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h2>Recent movements</h2></div>
+          <ul id="movements" class="movements"></ul>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <!-- ADJUST MODAL -->
+  <div id="modal" class="modal-backdrop hidden">
+    <div class="modal">
+      <h3 id="modal-title">Adjust stock</h3>
+      <p id="modal-product" class="muted"></p>
+      <div class="field">
+        <label for="modal-qty">Quantity</label>
+        <input id="modal-qty" type="number" min="1" value="1" />
+      </div>
+      <p id="modal-error" class="error"></p>
+      <div class="modal-actions">
+        <button id="modal-cancel" class="btn btn-ghost">Cancel</button>
+        <button id="modal-ship" class="btn btn-warn">Ship</button>
+        <button id="modal-receive" class="btn btn-primary">Receive</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

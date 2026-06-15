@@ -1,0 +1,17 @@
+{
+  "name": "inventory-dashboard",
+  "version": "1.0.0",
+  "description": "Full-stack inventory & stock-management dashboard (Express + SQLite + vanilla JS)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --experimental-sqlite --disable-warning=ExperimentalWarning server.js",
+    "seed": "node --experimental-sqlite --disable-warning=ExperimentalWarning db.js --reseed"
+  },
+  "engines": { "node": ">=22.5.0" },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "bcryptjs": "^2.4.3"
+  }
+}
