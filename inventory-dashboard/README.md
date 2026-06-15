@@ -1,4 +1,5 @@
-# Stockroom — Inventory & Stock-Management Dashboard
+# Stockroom
+# Inventory & Stock-Management Dashboard
 
 A small but complete full-stack web app: a relational database, a REST API,
 session-based auth, and a dashboard UI — no build step, one command to run.
