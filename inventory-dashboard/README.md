@@ -117,6 +117,3 @@ inventory-dashboard/
 └── README.md
 ```
 
-## License
-
-MIT
